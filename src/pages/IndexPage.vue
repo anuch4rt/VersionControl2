@@ -6,32 +6,42 @@
       @reset="onReset"
       class="q-gutter-md"
     >
+      >
       <q-input
         filled
         v-model="name"
-        label="Your name *"
-        hint="Name and surname"
+        label="ชื่อ-สกุล *"
+        hint="ชื่อและนามสกุล"
         lazy-rules
-        :rules="[ val => val && val.length > 0 || 'Please type something']"
+        :rules="[ val => val && val.length > 0 || 'กรุณาพิมพ์ชื่อ']"
+      />
+
+      <q-input
+        filled
+        v-model="name"
+        label="ชื่อ-สกุล *"
+        hint="ชื่อและนามสกุล"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || 'กรุณาพิมพ์ชื่อ']"
       />
 
       <q-input
         filled
         type="number"
         v-model="age"
-        label="อายุ: *"
+        label="อายุ *"
         lazy-rules
         :rules="[
-          val => val !== null && val !== '' || 'กรุณาพิมพ์อายุของคุณนะครับ',
-          val => val > 0 && val < 100 || 'กรุณาพิมพ์อายุที่ถูกต้องนะจ๊ะ'
+          val => val !== null && val !== '' || 'กรุณาพิมพ์อายุของคุณนะครับ / กรุณาใส่อายุ',
+          val => val > 0 && val < 100 || 'กรุณาพิมพ์อายุที่ถูกต้องนะจ๊ะ / กรุณาใส่อายุจริง'
         ]"
       />
 
       <q-toggle v-model="accept" label="I accept the license and terms" />
-
+ 1
       <div>
-        <q-btn label="Submit" type="submit" color="primary"/>
-        <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+        <q-btn label="ยืนยัน" type="submit" color="primary"/>
+        <q-btn label="เริ่มใหม่" type="reset" color="primary" flat class="q-ml-sm" />
       </div>
     </q-form>
 
